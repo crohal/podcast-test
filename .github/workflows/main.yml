@@ -18,6 +18,12 @@ jobs:
           pip install pyyaml
       - name: Verify feed.py is present
         run: ls -la $GITHUB_WORKSPACE
+      
+      - name: Check current directory
+        run: pwd
+      - name: List files to verify feed.py
+        run: ls -la
+      
       - name: Run Feed Generator
         run: python $GITHUB_WORKSPACE/feed.py
       - name: Push Repo Changes (if any)
